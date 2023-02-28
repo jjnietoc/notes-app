@@ -225,7 +225,7 @@ namespace NoteApp
 
         private static void AvailableCommands()
         {
-            Console.WriteLine(" New - Create a new note\n Edit - Edit a note\n Read -  Read a note\n Delete -  Delete a note\n List - List all notes\n Exit - Exit the application\n Dir - Opens note directory\n Help - Shows this help message\n");
+            Console.WriteLine(" New - Create a new note\n Edit - Edit a note\n Read -  Read a note\n Delete -  Delete a note\n List - List all notes\n Exit - Exit the application\n");
         }
 
         private static void NotesDirectory()
