@@ -66,8 +66,9 @@ namespace NoteApp
         }
         private static void NewNote()
         {
-            Console.WriteLine("Please write your note:\n");
+            Console.WriteLine("Please write your title and then your note:\n");
             string input = Console.ReadLine();
+            string title = Console.ReadLine();
 
             XmlWriterSettings NotesSettings =  new XmlWriterSettings();
 
@@ -75,12 +76,13 @@ namespace NoteApp
             NotesSettings.ConformanceLevel = ConformanceLevel.Auto;
             NotesSettings.Indent = true;
 
-            string Filename = DateTime.Now.ToString("dd-MM-yy") + ".xml";
+            string Filename = title + ".xml";
 
             using (XmlWriter NewNote = XmlWriter.Create(NoteDirectory + Filename, NotesSettings))
             {
                 NewNote.WriteStartDocument();
                 NewNote.WriteStartElement("Note");
+                NewNote.WriteElementString("title", title);
                 NewNote.WriteElementString("body", input);
                 NewNote.WriteEndElement();
 
